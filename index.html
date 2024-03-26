@@ -14,50 +14,56 @@
         <div class="left">
             <a id="logolinkhome" href="http://127.0.0.1:5500/index.html"><img id="logo" src="yes.png" alt="logo"></a>
         </div>
+        <div class="leftsecond">
+            <button id="createItemsButton">CREATE ITEMS</button>
+        </div>
+        <div class="right">
+            <button id="cartButton"><img id="cartimg" src="shopping-cart-png-image-shopping-cart-icon-sv-11562865326ta92uix1ak.png" alt="cart"></button>
+        </div>
     </nav>
     <div id="main">
         <div id="mainArea">
             <div id="itemDetails">
                 <h1 class="heads" id="awayactivator">ITEM CREATION:</h1>
-                <small><i><p>press "item creation twice"</p></i></small>
                <div id="away" >
-                 <!-- <label for="itemImage">Image:</label>
-                <input type="file" id="itemImage"><br> -->
-                <label for="itemName">Name:</label>
-                <input type="text" id="itemName" placeholder="Name"><br>
-                <label for="itemStoreLink">Store Link:</label>
-                <input type="text" id="itemStoreLink" placeholder="Store Link"><br>
-                <label for="itemPrice">Price:</label>
-                <input type="number" id="itemPrice" placeholder="Price"><br>
-                <label for="itemDescription">Description:</label>
-                <input name="itemDescription" id="itemDescription" placeholder="Description"></input><br>
-                <label for="itemStock">Stock:</label>
-                <input type="number" name="itemStock" id="itemStock" placeholder="Stock">
+                    <label for="itemImage">Image:</label>
+                    <input type="text" id="itemImage" placeholder="Image Path"><br>
+                    <label for="itemName">Name:</label>
+                    <input type="text" id="itemName" placeholder="Name"><br>
+                    <label for="itemStoreLink">Store Link:</label>
+                    <input type="text" id="itemStoreLink" placeholder="Store Link"><br>
+                    <label for="itemPrice">Price:</label>
+                    <input type="number" id="itemPrice" placeholder="Price"><br>
+                    <label for="itemDescription">Description:</label>
+                    <input name="itemDescription" id="itemDescription" placeholder="Description"></input><br>
+                    <label for="itemStock">Stock:</label>
+                    <input type="number" name="itemStock" id="itemStock" placeholder="Stock">
+                    <div id="removearea">
+                        <input type="text" id="removeByName" placeholder="Enter the Name to remove"><br>
+                        <button id="removeitem"><img src="remove.png" alt="remove" id="removeitemicon"></button>
+                        <button id="additem"><img src="32360.png" alt="add" id="additemicon"></button>
+                        <small><i><p>here are the remove an create buttons"</p></i></small>
+                    </div>
                </div>
             </div>
-            <div id="itemdisplayarea">
-                <h1 class="heads">ITEMS PRESENT:</h1>
-                <button id="display">DISPLAY ADDED ITEMS</button>
-                <div id="here">
-    
-                </div>
+        </div>
+        <div id="itemdisplayarea">
+            <h1 class="heads">ITEMS PRESENT:</h1>
+            <button id="display">DISPLAY ADDED ITEMS</button>
+            <div id="here">
             </div>
-            <div id="removearea">
-                <input type="text" id="removeByName" placeholder="Enter the Name to remove"><br>
-            </div>
-            <button id="removeitem"><img src="remove.png" alt="remove" id="removeitemicon"></button>
-            <button id="additem"><img src="32360.png" alt="add" id="additemicon"></button>
-            <small><i><p>here are the remove an create buttons"</p></i></small>
         </div>
         <div id="cart">
-            <h1 class="heads">CART:</h1>
-            <div id="cartdisplay">
-
-            </div>
-            <input type="text" id="addToCartByName">
-            <button id="addToCartButton">Add To Cart</button>
-            <button id="removeFromCartButton">Remove From Cart</button>
-            <small><i><p id="total">TOTAL:</p></i></small>
+            <h1 class="heads" id="mine">CART:</h1>
+            <div id="yes">
+                <i><b><p id="countDisplay">Count:</p></b></i>
+                <div id="cartdisplay">
+                </div>
+                <input type="text" id="addToCartByName" placeholder="Name of Product"><br>
+                <button id="addToCartButton">Add To Cart</button>
+                <button id="removeFromCartButton">Remove From Cart</button>
+                <p id="total">TOTAL</p>
+                </div>
         </div>
     </div>
     <script src="app.js"></script>

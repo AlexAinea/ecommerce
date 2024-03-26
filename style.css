@@ -2,13 +2,13 @@
     font-family: arial;
     margin: 0px;
     padding: 0px;
-    font-style: italic;
 }
 
-nav{
-    display: flex;
-    background-color: #fe3448;
-}
+
+
+/* idsandclasses */
+
+
 
 #left{
     display: flex;
@@ -22,46 +22,75 @@ nav{
     display: flex;
 }
 
-#away{
+#mainArea{
     display: none;
 }
 
-#awayactivator:hover{
-    cursor: pointer;
-    color: #fe3448;
-    transition: 1s;
-    letter-spacing: 1px;
-    
+.heads{
+    font-style: italic;
+    border-bottom: double 5px;
+    border-top: none;
 }
 
-#mainArea{
-    border: solid;
-    padding-right: 100px;
+#away{
+    border-right: solid;
+}
+
+#away label{
+    font-style: italic;
+    margin-bottom: 100px;
+}
+
+#away input{
+    margin-bottom: 50px;
+}
+
+#itemDetails{
+    margin-right: 30px;
+}
+
+#yes{
+    margin-left: 170px; 
+    border: double 5px;
+}
+
+#mine{
+    margin-left: 170px; 
 }
 
 #cart{
-    border: solid;
-    margin-left: 100px;
+    display: none;
+}
+
+#here{
+    display: flex;
 }
 
 .outerDiv{
-    border: double;
-    border-color: #fe3448;
-    border-radius: 10px;
+    border: double 5px;
+    margin: 10px;
 }
 
-.heads{
-    margin-top: 50px;
-    font-weight: bolder;
-    border-bottom: solid;
-    color: #fe3448;
-    margin-bottom: 10px;
+.outerDiv:hover{
+    background-color: gray;
+    transition: 1s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+
 }
+
+
 
 /* pictures */
+
+
+
+.thisone{
+    height: 90px;
+}
+
 #logo{
     height: 90px;
-    
 }
 
 #searchicon{
@@ -76,5 +105,51 @@ nav{
     height: 50px;
 }
 
+#cartimg{
+    height: 50px;
+}
+
+
+
 /* buttons */
 
+
+
+button{
+    background-color: rgb(255, 208, 0);
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+button:hover{
+    letter-spacing: 3px;
+    transition: 1s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+#createItemsButton{
+    border: 1px double rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+#cartButton{
+    margin-left: 1000px;
+}
+
+
+
+/* elements */
+
+
+
+input{
+    border: 1px double rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+nav{
+    display: flex;
+    background-color: rgb(255, 208, 0);
+}

@@ -1,7 +1,14 @@
 let addedItems = [];
-let cartItems = []
+let cartItems = [];
+let initialCount = 0;
+
+window.addEventListener('load', function counter() {
+    let countDisplay = document.getElementById("countDisplay");
+    countDisplay.textContent = `Count: ${initialCount}`;
+});
 
 document.getElementById("additem").onclick = function addItem() {
+    pic = document.getElementById("itemImage").value;
     iname = document.getElementById("itemName").value;
     storeLink = document.getElementById("itemStoreLink").value;
     price = parseFloat(document.getElementById("itemPrice").value);
@@ -9,6 +16,7 @@ document.getElementById("additem").onclick = function addItem() {
     stock = parseInt(document.getElementById("itemStock").value);
 
     let item = {
+        itemPic: pic,
         itemName: iname,
         itemStoreLink: storeLink,
         itemPrice: price,
@@ -25,6 +33,7 @@ document.getElementById("display").onclick = function display() {
 
     for (let i = 0; i < addedItems.length; i++) {
         let outerDiv = document.createElement("div");
+        let picCard = document.createElement("img")
         let nameCard = document.createElement("h2");
         let storeLinkCard = document.createElement("a");
         let priceCard = document.createElement("p");
@@ -32,6 +41,8 @@ document.getElementById("display").onclick = function display() {
         let stockCard = document.createElement("p");
 
         nameCard.textContent = addedItems[i].itemName;
+        picCard.src =  addedItems[i].itemPic;
+        picCard.alt = addedItems[i].itemPic;
         storeLinkCard.href = addedItems[i].itemStoreLink;
         storeLinkCard.textContent = addedItems[i].itemStoreLink;
         storeLinkCard.target = "_blank";
@@ -40,7 +51,9 @@ document.getElementById("display").onclick = function display() {
         stockCard.textContent = "The available number of the product is: " +  addedItems[i].itemStock;
 
         outerDiv.classList.add("outerDiv");
+        picCard.classList.add("thisone")
 
+        outerDiv.appendChild(picCard);
         outerDiv.appendChild(nameCard);
         outerDiv.appendChild(storeLinkCard);
         outerDiv.appendChild(priceCard);
@@ -57,10 +70,9 @@ document.getElementById("removeitem").onclick = function removeitemandremovedisp
     for (let i = 0; i < addedItems.length; i++) {
         if (addedItems[i].itemName === removeItemByName) {
             addedItems.splice(i, 1);
-            
             break;
-        };
-    };
+        }
+    }
 };
 
 document.getElementById("addToCartButton").onclick = function additemtocart(){
@@ -72,6 +84,7 @@ document.getElementById("addToCartButton").onclick = function additemtocart(){
             let displayArea = document.getElementById("cartdisplay");
 
             let outerDiv = document.createElement("div");
+            let picCard = document.createElement("img")
             let nameCard = document.createElement("h2");
             let storeLinkCard = document.createElement("a");
             let priceCard = document.createElement("p");
@@ -79,6 +92,8 @@ document.getElementById("addToCartButton").onclick = function additemtocart(){
             let stockCard = document.createElement("p");
 
             nameCard.textContent = addedItems[j].itemName;
+            picCard.src =  addedItems[j].itemPic;
+            picCard.alt = addedItems[j].itemPic;
             storeLinkCard.href = addedItems[j].itemStoreLink;
             storeLinkCard.textContent = addedItems[j].itemStoreLink;
             storeLinkCard.target = "_blank";
@@ -87,7 +102,9 @@ document.getElementById("addToCartButton").onclick = function additemtocart(){
             stockCard.textContent = "The available number of the product is: " +  addedItems[j].itemStock;
 
             outerDiv.classList.add("outerDiv");
+            picCard.classList.add("thisone")
 
+            outerDiv.appendChild(picCard);
             outerDiv.appendChild(nameCard);
             outerDiv.appendChild(storeLinkCard);
             outerDiv.appendChild(priceCard);
@@ -97,6 +114,11 @@ document.getElementById("addToCartButton").onclick = function additemtocart(){
             displayArea.appendChild(outerDiv);
 
             cartItems.push(addedItems[j])
+
+            initialCount++
+
+            let countDisplay = document.getElementById("countDisplay");
+            countDisplay.textContent = `Count: ${initialCount}`
 
             let totalamount = 0;
 
@@ -134,12 +156,26 @@ document.getElementById("removeFromCartButton").onclick = function removeItemFro
     }
 };
 
-document.getElementById("awayactivator").onclick = function awayshows(){
-    let away = document.getElementById("away");
-    if (away.style.display === "none") {
-        away.style.display = "block"; // Change "block" to whatever display value you want
+document.getElementById("createItemsButton").onclick = function show() {
+    let mainArea = document.getElementById("mainArea");
+    if (mainArea.style.display === "none") {
+        mainArea.style.display = "block";
+        mainArea.style.transition = "opacity 1s ease-in-out";
+        mainArea.style.opacity = "1";
     } else {
-        away.style.display = "none";
+        mainArea.style.display = "none";
     }
-}
+};
+
+document.getElementById("cartButton").onclick = function showCart() {
+    let cart = document.getElementById("cart");
+    if (cart.style.display === "none") {
+        cart.style.display = "block";
+        cart.style.transition = "opacity 1s ease-in-out";
+        cart.style.opacity = "1";
+    } else {
+        cart.style.display = "none";
+    }
+};
+
 
